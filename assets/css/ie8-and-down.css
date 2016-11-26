@@ -1,0 +1,45 @@
+#blog-content #sidebar
+{
+	width: 27%;
+}
+
+#main-front
+{
+}
+
+#main-front .benefits-conts .benefit-items
+{
+	width: 280px !important;
+}
+
+#find-results
+{
+	height: auto !important;
+}
+
+#find-results #find-map
+{
+	display: none;
+}
+
+#find-results #results-items-cont
+{
+	width: 100% !important;
+	height: auto !important;
+	position: static !important;
+}
+
+#find-results #find-item-results .tutor-results .review-conts .num-of-reviews
+{
+	display: none;
+}
+
+.sub-type-map .containers
+{ 
+   max-width: 960px !important; /* Max width from main CSS file */
+}
+
+.sub-type-map .push, .sub-type-map #gen-footer
+{
+  display: block !important;
+}

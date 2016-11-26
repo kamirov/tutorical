@@ -1,0 +1,290 @@
+<?  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+/*
+|--------------------------------------------------------------------------
+| File and Directory Modes
+|--------------------------------------------------------------------------
+|
+| These prefs are used when checking and setting modes when working
+| with the file system.  The defaults are fine on servers with proper
+| security, but you may wish (or even need) to change the values in
+| certain environments (Apache running a separate process for each
+| user, PHP under CGI with Apache suEXEC, etc.).  Octal values should
+| always be used to set the mode correctly.
+|
+*/
+
+define('FILE_READ_MODE', 0644);
+define('FILE_WRITE_MODE', 0666);
+define('DIR_READ_MODE', 0755);
+define('DIR_WRITE_MODE', 0777);
+
+
+/*
+|--------------------------------------------------------------------------
+| File Stream Modes
+|--------------------------------------------------------------------------
+|
+| These modes are used when working with fopen()/popen()
+|
+*/
+
+define('FOPEN_READ',							'rb');
+define('FOPEN_READ_WRITE',						'r+b');
+define('FOPEN_WRITE_CREATE_DESTRUCTIVE',		'wb'); // truncates existing file data, use with care
+define('FOPEN_READ_WRITE_CREATE_DESTRUCTIVE',	'w+b'); // truncates existing file data, use with care
+define('FOPEN_WRITE_CREATE',					'ab');
+define('FOPEN_READ_WRITE_CREATE',				'a+b');
+define('FOPEN_WRITE_CREATE_STRICT',				'xb');
+define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
+
+
+/*
+|--------------------------------------------------------------------------
+| Environment constants
+|--------------------------------------------------------------------------
+*/
+
+define('IS_TEST_MODE', FALSE);
+define('INTERNET_CONNECTION', TRUE);
+define('ENV', 'min');	// Can be 'dev', or 'min'
+
+
+/*
+|--------------------------------------------------------------------------
+| Site-specific constants
+|--------------------------------------------------------------------------
+|
+| Miscellaneous site constants. Might categorize if enough come up.
+|
+*/
+
+define('ALL_USERS_ID', 0);
+define('GENERAL_PAGE', 0);
+
+define('DELETED_ID', 1);
+define('DELETED_NAME', '[deleted]');
+define('DELETED_AVATAR_PATH', 'assets/images/default_avatar.jpg');
+
+
+define('DECREASING_ORDER', 0);
+define('INCREASING_ORDER', 1);
+
+define('DEFAULT_FIND_DISTANCE', 20);
+define('DEFAULT_EMAIL_TUTORS_DISTANCE', 20);
+
+define('STANDARD_FADE_SPEED', 400);
+define('FAST_FADE_SPEED', 200);
+define('OVERLAY_FADE_SPEED', 0);
+
+define('LOADER_BASE', 'loader-4');
+define('LOADER_LIGHT', LOADER_BASE.'-light.gif');
+define('LOADER_DARK', LOADER_BASE.'-dark.gif');
+define('LOADER_SEARCH', LOADER_BASE.'-search.gif');
+
+define('ANTI_SPAM_FILLED_TEXT', 'mouth-based video game');
+define('ANTI_SPAM_SCRIPTED_TEXT', '');
+
+define('ROLE_ADMIN', 99);
+define('ROLE_BOT', 50);
+define('ROLE_USER', 10);
+define('ROLE_TUTOR', 20);
+define('ROLE_STUDENT', 30);
+
+define ('NAME_TYPE_FULL', 1);
+define ('NAME_TYPE_SHORT', 2);
+define ('NAME_TYPE_CUSTOM', 3);
+
+define('SNIPPET_MAX_LENGTH', 80);
+
+define('ICON_EDIT', 'assets/images/account/edit-icon.png');
+define('ICON_VERT_MOVE', 'assets/images/account/vert-move-icon.png');
+
+define('SITE_EMAIL', 'thepeople@tutorical.com');
+define('MAILER_EMAIL', 'mailer@tutorical.com');
+//define('MAILER_EMAIL', 'tree.andrei@gmail.com');
+define('MAILER_NAME', 'Tutorical');
+//define('SITE_EMAIL', 'tree.andrei@gmail.com');
+
+// Change these to a lang item eventually
+define('DEFAULT_FREE_REASON', "Tutors might choose to work for free for exposure or as a volunteer service. Contact the tutor and ask for more details.");
+define('DELETE_TEXT', 'goodbye');
+define('NOT_GRADUATED_TEXT', 'Present');
+
+define('STATUS_OK', 1);
+define('STATUS_VALIDATION_ERROR', 2);
+define('STATUS_DATABASE_ERROR', 3);
+define('STATUS_UNKNOWN_ERROR', 4);
+define('STATUS_NOTHING_HAPPENED', 5);
+
+/*
+|--------------------------------------------------------------------------
+| Email constants
+|--------------------------------------------------------------------------
+
+*/
+
+// Take up 490/500 for Tutorical. Save 10 for Aeterna and for emails informing us of 0 emails remaining.
+define('HOURLY_EMAILS_MAX', 450);
+define('BACKUP_HOURLY_EMAILS_MAX', 40);
+define('IMPORTANT_EMAIL_PRIORITY', 10);
+
+define('EMAIL_STATUS_SENT', 1);
+define('EMAIL_STATUS_QUEUED', 2);
+
+/*
+|--------------------------------------------------------------------------
+| Screen size constants
+|--------------------------------------------------------------------------
+
+*/
+
+define('SCREEN_SUPER_REGULAR', 1000);	
+define('SCREEN_REGULAR', 900);
+define('SCREEN_SUB_REGULAR_PLUS', 800);
+define('SCREEN_SUB_REGULAR', 675);
+define('SCREEN_SMALL_REGULAR', 525);
+define('SCREEN_SMALL', 385);
+
+/*
+|--------------------------------------------------------------------------
+| Location constants
+|--------------------------------------------------------------------------
+
+*/
+
+define('LOC_FROM_SESSION', 1);
+define('LOC_FROM_DB', 2);
+define('LOC_FROM_GEOCODE', 3);
+
+define('LOC_STATUS_FOUND', 'OK');
+define('LOC_STATUS_NEEDS_SERVERSIDE_GEOCODE', 5);
+
+/*
+|--------------------------------------------------------------------------
+| Contact form responses
+|--------------------------------------------------------------------------
+
+*/
+
+define('ACCOUNT_STATUS_UNKNOWN', 1);
+define('ACCOUNT_STATUS_LOGGED_IN', 2);
+define('ACCOUNT_STATUS_LOGGED_IN_TO_ANOTHER_ACCOUNT', 6);
+define('ACCOUNT_STATUS_JUST_MADE', 3);
+define('ACCOUNT_STATUS_JUST_MADE_EMAIL_QUEUED', 4);
+define('ACCOUNT_STATUS_EXISTS_BUT_INACTIVE', 5);
+define('ACCOUNT_STATUS_UNLOGGED_USER', 6);
+
+/*
+|--------------------------------------------------------------------------
+| Student-Tutor Relationship Constants
+|--------------------------------------------------------------------------
+
+*/
+
+define('STUDENT_STATUS_ACTIVE', 1);
+define('STUDENT_STATUS_PAST', 2);
+define('STUDENT_STATUS_TEMP', 3);
+define('STUDENT_STATUS_PENDING', 4);
+define('STUDENT_STATUS_NEEDS_APPROVAL', 5);
+
+/*
+|--------------------------------------------------------------------------
+| Autofill Tables Constants
+|--------------------------------------------------------------------------
+
+*/
+
+define('ITEM_STATUS_ACTIVE', 1);
+define('ITEM_STATUS_PENDING', 2);
+define('ITEM_STATUS_INACTIVE', 3);	// Used with subjects
+define('ITEM_STATUS_HIDDEN', 3);	// Used with locations
+
+/*
+|--------------------------------------------------------------------------
+| Requests Constants
+|--------------------------------------------------------------------------
+
+*/
+
+define('REQUEST_STATUS_OPEN', 1);
+define('REQUEST_STATUS_CLOSED', 2);
+define('REQUEST_STATUS_PENDING', 3);
+define('REQUEST_STATUS_EXPIRED', 4);
+
+define('REQUEST_DAYS_UNTIL_EXPIRED', 30);
+
+define('REQUEST_TYPE_LOCAL', 0);
+define('REQUEST_TYPE_DISTANCE', 2);
+define('REQUEST_TYPE_BOTH', 3);
+
+/*
+|--------------------------------------------------------------------------
+| Request Responses Constants
+|--------------------------------------------------------------------------
+
+*/
+
+define('RESPONSE_STATUS_APPROVED', 1);
+define('RESPONSE_STATUS_PENDING', 2);
+define('RESPONSE_STATUS_REJECTED', 3);
+define('RESPONSE_STATUS_INVITED', 4);
+define('RESPONSE_STATUS_BANNED', 5);
+
+/*
+|--------------------------------------------------------------------------
+| Link Type Constants
+|--------------------------------------------------------------------------
+
+*/
+
+define('LINK_TYPE_GENERAL', 1);
+define('LINK_TYPE_FACEBOOK', 2);
+define('LINK_TYPE_TWITTER', 3);
+define('LINK_TYPE_GOOGLE_PLUS', 4);
+define('LINK_TYPE_LINKEDIN', 5);
+
+/*
+|--------------------------------------------------------------------------
+| Report Type Constants
+|--------------------------------------------------------------------------
+
+*/
+
+define('REPORT_TYPE_REVIEW', 1);
+define('REPORT_TYPE_TUTOR', 2);
+define('REPORT_TYPE_EXTERNAL_REVIEW', 3);
+define('REPORT_TYPE_REQUEST', 4);
+
+/*
+|--------------------------------------------------------------------------
+| Image and Avatar constants
+|--------------------------------------------------------------------------
+
+*/
+
+define('AVATAR_WIDTH', 200);
+define('AVATAR_HEIGHT', 200);
+define('DEFAULT_AVATAR_PATH', 'assets/images/default_avatar.jpg');
+
+/*
+|--------------------------------------------------------------------------
+| Profile notice IDs
+|--------------------------------------------------------------------------
+|
+| These represent the profile_notices.id column.
+|
+*/
+
+define('MAKE_PROFILE', 1);
+define('MADE_PROFILE', 2);
+define('THANKS', 3);
+define('NEW_STUDENT_ADDED', 7);
+define('WELCOME_NEW_STUDENT', 6);
+define('INVITED_TO_REQUEST', 8);
+define('REJECTED_FROM_REQUEST', 9);
+define('ACCEPTED_TO_REQUEST', 10);
+define('ADMIN_IMPORT_WELCOME', 11);
+
+/* End of file constants.php */
+/* Location: ./application/config/constants.php */
